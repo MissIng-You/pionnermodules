@@ -35,7 +35,7 @@
     "release:weex": "bash build/release-weex.sh",
     "install:hooks": "ln -fs ../../build/git-hooks/pre-commit .git/hooks/pre-commit"
   },
-  "repository": "git+https://github.com/missing-you/pionnermodules/pionnermodules.git",
+  "repository": "git+https://github.com/missing-you/pionnermodules.git",
   "keywords": [
     "front-end frameworks mixins",
     "bootstrap-scss",

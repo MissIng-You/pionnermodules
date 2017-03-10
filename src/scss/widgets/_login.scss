@@ -1,0 +1,122 @@
+html, body {
+    background-image: url("/images/bg1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+    font-family: 'Microsoft YaHei UI';
+}
+
+.header {
+    padding-top: 8%;
+}
+
+.header-bg {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    padding: 10px 20px;
+}
+
+.header-title {
+    /*color: black;
+    font-size: 30px;
+    letter-spacing: 2px;*/
+    color: #549acc;
+    text-shadow: 0 0 1px rgb(0, 0, 0);
+}
+
+.header-title1 {
+    font-size: 24px;
+    color: #635f5f;
+    text-shadow: 0 0 1px rgb(125, 125, 125);
+}
+
+.login-tab {
+    padding-left: 15px;
+    padding-top: 30px;
+    font-size: 14px;
+}
+
+.login-font {
+    color: white;
+}
+
+.login-code {
+    background-color: rgba(255, 250, 255, 0.2);
+}
+
+.login-content {
+    background-image: url("/images/logincenter1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 0 5px 5px;
+}
+
+.footer {
+    background-image: url("/images/footer.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    bottom: 0px;
+    padding: 10px;
+}
+
+.input-group {
+    margin: 0px 0px 30px 0px !important;
+}
+
+.form-group {
+    margin-bottom: 0px !important;
+}
+
+.btn-sm {
+    width: 100%;
+    font-size: 16px !important;
+}
+
+.error-show {
+    font-size: 10px;
+    color: red;
+    visibility: visible;
+}
+
+.error-hidden {
+    visibility: hidden;
+}
+
+.input-group-icon {
+    color: white;
+    border: 0px;
+    background-color: rgba(255, 250, 255, 0);
+    font-size: 20px;
+    padding-left: 9px;
+}
+
+.a-tab {
+    color: #bfbfbf;
+    font-size: 14px;
+}
+
+.a-tab-click {
+    color: #fff;
+    font-size: 18px;
+}
+
+a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.form-control-input {
+    height: 30px;
+}
+
+.form-group-height {
+    height: 55px;
+}
+
+.btncolor {
+    color: #f1f1f1;
+}

@@ -1,0 +1,100 @@
+
+// Add chart components.
+
+// Add .chart-list
+.chart-list {
+    background-color: $brand-gray-dark;
+    > li:not(:last-child) {
+        border-bottom: 1px dashed $brand-white-dark;
+    }
+}
+
+// Add .chart 
+.chart {
+    position: relative;
+    margin: $padding-base;
+    color: $brand-white;
+    background-color: $brand-gray-dark;
+    width: 240px;
+    
+    @include clearfix();
+    // Add .chart-title 
+    .chart-title {
+        padding: $padding-base;
+    }
+
+    // Add .box-body
+    .chart-body {
+        padding: $padding-base;
+    }
+    // Add .box-footer
+    .chart-footer {
+        padding: $padding-base;
+
+        i {
+            margin-right: $padding-base;
+        }
+    }
+}
+
+// Add .chart-body .chart-mask .chart-content
+.chart-body {
+    @include clearfix();
+    .chart-user {
+        float: left;
+        width: 50px;
+        vertical-align: middle;
+    }
+    .chart-message {
+        margin-left: 50px;
+        padding: $padding-base;
+        color: $brand-gray-dark;
+        background-color: $brand-white;
+        font-size: 12px;
+        @include border-radius();
+        @include arrow-left($brand-white);
+    }
+
+    
+}
+
+// Add .chart-message .chart-mask
+.chart-message {
+    position: relative;
+    // Add .chart-video-mask
+    .chart-video-mask {
+        position: absolute;
+        font-size: 50px;
+        left: 50%;
+        top: 50%;
+        margin-left: -25px;
+        margin-top: -25px;
+        color: $brand-white;
+        background-color: rgba($brand-white, .5);
+        @include border-radius(50%);
+        @include square(45px);
+
+        &::before {
+            position: absolute;
+            left: -2px;
+            top: -12px;
+        }
+    }
+    // Add .chart-voice-mask
+    .chart-voice-mask {
+        font-size: 16px;
+        margin: 0 $padding-base;
+        color: $brand-gray;
+    }
+    // Add .chart-img
+    .chart-img {
+        width: 100%;
+        max-height: 200px;
+    }
+
+    &:hover {
+        .chart-video-mask, .chart-voice-mask {
+            color: $brand-info;
+        }
+    }
+}

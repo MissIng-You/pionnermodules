@@ -1,0 +1,135 @@
+
+// Reset .input-group / .input-group-addon & .from-control
+.input-group {
+
+    .form-control[multiple] {
+        overflow-y: hidden;
+    }
+
+    .form-control {
+        height: 30px;
+        line-height: 30px;
+
+        @include box-shadow(none);
+    }
+
+    .input-group-addon {
+        &.btn {
+            background-color: $brand-info;
+            color: $brand-white;
+            border-color: $brand-info;
+           // padding: 5px;
+
+            &:hover {
+                background-color: $brand-info-dark;
+            }
+        }
+        > .fa-search {            
+            height: 14px;
+            width: 14px;
+            padding: 0;
+        }
+    }
+}
+
+// Add .input-group-sm
+.input-group-xs {
+    .form-control {
+        height: 25px;
+        line-height: 25px;
+    }
+    .input-group-addon {
+        &.btn {
+            padding: 5px;
+        }
+    }
+}
+
+// Reset .control-label
+.control-label {
+    position: relative;
+    padding-left: $padding-basex4;
+    padding-right: $padding-basex4;
+    text-align: left;
+    font-weight: normal;
+
+    &::after {
+        position: absolute;
+        content: "：";
+        right: $padding-basex4;
+        top: 0;
+        padding: $padding-base;
+    }
+
+    // Reset .control-label .no-colon
+    &.no-colon {
+        &::after {
+            content: "";
+        }
+    }
+}
+
+// Reset .control-label .no-colon
+.form-group {
+    .control-label {
+        & + .no-colon {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        & + .control-label {
+            padding-right: 0;
+        }
+    }
+}
+
+// media .control-label
+@media(min-width: $screen-sm-min) {
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+}
+
+// Reset .form-control
+.form-control {
+    height: 30px;
+    line-height: 30px;
+    padding: 5px 10px;
+
+    @include box-shadow(none);
+
+    &.error {
+        border: 1px solid $brand-danger;
+        background-color: $brand-danger-light;
+    }
+
+    // &.valid {
+    //     border: 1px solid $brand-success;
+    // }
+
+    &:hover,
+    &:focus {
+        @include box-shadow(none);
+    }
+
+    &.form-control-xs {
+        height: 25px;
+        line-height: 25px;
+        padding: 0;
+    }
+}
+
+// Add .form-description
+.control-description {
+    position: absolute;
+    display: inline-block;
+    line-height: 30px;
+    color: $brand-danger;
+}
+
+// @media
+@media (min-width: $screen-sm-min) {
+    .form-inline .input-group .input-group-addon {
+        width: 1px;     // 去掉 width: auto;
+    }
+}

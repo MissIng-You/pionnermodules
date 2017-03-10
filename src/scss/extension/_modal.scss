@@ -1,0 +1,139 @@
+
+// Reset .modal-dialog
+.modal-dialog {
+    width: $c-modal-md;
+} 
+
+// Add .fade transition
+.fade {
+    @include transition(padding .15s linear);
+}
+
+// Reset .modal-header
+.modal-header {
+    padding: $c-modal-title-padding;
+    height: $c-modal-title-height;
+    line-height: $c-modal-title-height;
+
+    .modal-title {
+        font-size: 14px;
+    }
+
+    // Reset .close
+    .close {
+        line-height: $c-modal-title-height;
+        // color: $brand-white;
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+// Add .modal-banner
+.modal-banner {
+    padding: $padding-basex2 $padding-basex5;
+    background-color: $brand-info-lightest;
+}
+
+//  Reset .modal-body
+.modal-body {
+    padding: $c-modal-inner-padding;
+    background-color: $c-modal-body-bg;
+
+    // Add .modal-body-* theme
+    &.modal-body-xs {
+        max-height: $c-modal-body-height-xs;
+    }
+
+    &.modal-body-sm {
+        max-height: $c-modal-body-height-sm;
+    }
+
+    &.modal-body-md {
+        max-height: $c-modal-body-height-md;
+    }
+
+    &.modal-body-lg {
+        max-height: $c-modal-body-height-lg;
+    }
+
+}
+
+// Reset .modal-footer
+.modal-footer {
+    border-top: 0;
+    padding: $padding-basex4 $padding-basex5;
+    background-color: $brand-info-lightest;
+
+    // Reset .modal-footer .alert
+    .alert {
+        padding: $padding-base;
+    }
+}
+
+// Add .modal-info
+.modal-info {
+    background-color: $c-modal-backdrop-bg;
+
+    .modal-header {
+        background-color: $c-modal-header-bg;
+        color: $brand-gray-dark;
+    }
+
+    .modal-title {
+        display: inline-block;
+    }
+
+    //  Reset .modal-content
+    .modal-content {
+        border: 3px solid $c-modal-content-border-color;
+
+        @include border-radius($radius-base);
+        // @include box-shadow(0 0 $shadow-base $shadow-base  $c-modal-backdrop-bg);
+
+        // Reset media
+        @media (min-width: $screen-md-min) {
+            .modal-content {
+                @include box-shadow(0 0 $shadow-base $shadow-base  $c-modal-backdrop-bg);
+            }
+        }
+    }
+}
+
+// Reset  media .modal-sm
+@media (min-width: $screen-sm-min) {
+  .modal-sm { width: $c-modal-sm; }
+}
+
+// Reset media .modal-lg 
+@media (min-width: $screen-md-min) {
+  .modal-lg { width: $c-modal-lg; }
+}
+
+// Add .modal-xs
+@media (min-width: $screen-sm-min) {
+    .modal-xs {
+        width: $c-modal-xs;
+    }
+}
+
+
+// Add .modal--alert
+.modal--alert {
+
+    .modal-header {
+        padding-left: $padding-basex3;
+        padding-right: $padding-basex3;
+        height: 28px;
+        line-height: 28px;
+    }
+
+    .modal-body {
+        background-color: $brand-white;
+        min-height: 80px;
+    }
+
+    .modal-footer {
+        padding: $padding-basex2 $padding-basex3;
+    }
+}

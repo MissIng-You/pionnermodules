@@ -1,0 +1,80 @@
+
+
+// Add .pagination-divider
+.pagination {
+    @include clearfix();
+    
+    &.pagination-divider {
+        li{
+            a, span {
+                border-color: $gray-lighter;
+                margin-right: $padding-basex2;
+                color: $brand-gray-dark;
+                background-color: $brand-white;
+                border-color: $brand-disabled;
+
+                @include border-radius(1px);
+
+                 &:hover {                     
+                    background-color: $brand-gray-lighter;                    
+                }
+            }
+
+            &:last-child {
+                a, span {
+                    margin-right: 0;
+                }
+            }
+
+            &.active span {
+                background-color: $brand-info-darken;
+                border-color: $brand-info-darken;
+                color: $brand-white;
+                font-size: $font-size-base;
+                padding: $padding-btn-top  $padding-btn-right;
+            }
+
+             &.disabled span {
+                color: $brand-disabled;                
+                border-color: $brand-gray-light;
+            }
+           
+        }
+    }
+}
+
+// Add .pagination-goto
+.pagination-goto {
+    width: 90px;
+    
+    .form-control {
+        @include border-radius(1px);
+        padding: $padding-base;
+    }
+
+    .input-group-addon {
+        @include border-radius(1px);
+        padding: $padding-base;
+              
+        &.btn {
+             background-color: $brand-info-darken;
+             border-color: $brand-info-darken;
+             font-size: $font-size-base;
+             padding: $padding-btn-top  $padding-btn-right;
+        }
+    }
+}
+
+// Add .pagination-description
+.pagination-description {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.2em;
+    line-height: 2;
+    letter-spacing: $padding-base / 2;
+}
+
+// Add .pagination-toolbar 
+.pagination-toolbar {
+    position: absolute;
+}

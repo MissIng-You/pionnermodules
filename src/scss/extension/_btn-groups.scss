@@ -1,0 +1,411 @@
+// Reset .btn-toolbar 
+.btn-toolbar {
+    @include clearfix();
+    &.btn-toolbar-rect {
+        margin-left: 0;
+        .btn,
+        .btn-group {
+            @include border-radius();
+            margin-left: $padding-basex5;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        .btn-text {
+            display: inline-block;
+            line-height: 30px;
+        }
+    }
+    // Add .btn-toolbar-xs theme
+    &.btn-toolbar-xs {
+        margin-left: 0;
+        margin-top: -5px;
+        .btn,
+        .btn-group {
+            @include border-radius();
+            margin-left: $padding-basex3;
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+// Reset .btn-group .btn:focus outline;
+.btn-group {
+    @include clearfix();
+    >.btn {
+        background-color: $brand-white;
+        border: 0;
+        @include box-shadow(none);
+        &:focus {
+            outline: 0;
+        }
+        &:hover {
+            color: $brand-info;
+        }
+        &.active {
+            &,
+            &:hover {
+                color: $brand-info;
+            }
+        }
+        &.disabled {
+            &,
+            &:hover {
+                color: $brand-disabled;
+            }
+        }
+        // sizes
+        &.btn-lg {
+            font-size: 14px;
+        }
+    }
+}
+
+// Add .btn-group-divider theme
+.btn-group-divider {
+    position: relative;
+    background-color: transparent;
+    @include clearfix();
+    .btn {
+        border: 0;
+        outline: 0;
+        padding: $padding-base $padding-basex2;
+        background-color: transparent;
+        &:hover {
+            background-color: transparent;
+            border-color: $brand-gray;
+            color: $brand-gray-dark;
+        }
+        &.btn-lg {
+            padding: $padding-basex3;
+        }
+        +.btn {
+            margin-left: $padding-base;
+            &::before {
+                position: absolute;
+                left: -2px;
+                top: 25%;
+                content: "";
+                background-color: $gray-lighter;
+                width: 1px;
+                height: 50%;
+            }
+        }
+    }
+    .btn-default {
+        background-color: transparent;
+        border-color: $brand-gray;
+        color: $brand-gray-dark;
+    }
+    .btn-disabled {
+        background-color: $brand-white;
+        border-color: $brand-gray-light;
+        color: $brand-gray;
+    }
+    .btn-active {
+        background-color: $brand-info-darken;
+        border-color: $brand-info-darken;
+        color: $brand-white;
+        .fa,
+        .icon {
+            @include text-shadow(0 1px 1px $gray-light);
+        }
+    }
+}
+
+// Add .btn-group-sep theme
+.btn-group-sep {
+    background-color: $brand-white;
+    @include clearfix();
+    @include box-shadow-default();
+    @include border-radius();
+    >.btn {
+        border: 0;
+        @include box-shadow-default();
+        +.btn {
+            margin-left: 1px;
+            &::before {
+                z-index: 2;
+                position: absolute;
+                left: -1px;
+                top: 25%;
+                content: "";
+                background-color: $brand-gray;
+                width: 1px;
+                height: 50%;
+            }
+        }
+        // sizes
+        &.btn-lg,
+        &.btn-sm {
+            padding: 10px;
+        }
+        &.btn-xs {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        // Reset left / right radius.
+        &:first-child {
+            @include border-left-radius($radius-base);
+        }
+        &:last-child {
+            @include border-right-radius($radius-base);
+        }
+    }
+
+    // Reset .btn-group-sep .fa-fixed/ .iconfont-fixed
+    .fa-fixed,
+    .iconfont-fixed {
+        height: 35px;
+    }
+}
+
+// Add .btn-group-arrow theme
+.btn-group-arrow {
+    @include clearfix();
+    >.btn {
+        &.active {
+            // Add top arrow
+            @include arrow-top-empty();
+        }
+    }
+}
+
+// Add .btn-group-arrow-white
+.btn-group-arrow-white {
+    @include clearfix();
+    >.btn {
+        &.active {
+            // Add top arrow #dadada special color.
+            @include arrow-top-empty($brand-white, #efefef);
+        }
+    }
+}
+
+// Add .btn-group-gap theme
+.btn-group-gap {
+    @include clearfix();
+    >.btn {
+        // Reset .btn-group radius
+        &:not(:first-child):not(:last-child):not(.dropdown-toggle),
+        &:first-child:not(:last-child):not(.dropdown-toggle),
+        &:last-child:not(:first-child):not(.dropdown-toggle) {
+            @include border-radius();
+        }
+        height: 40px;
+        min-width: 40px;
+        @include box-shadow-default();
+        // child iconfont
+        >i {
+            vertical-align: middle;
+            font-size: 20px;
+        }
+        // theme sizes
+        &.btn-xs {
+            height: 25px;
+        }
+        &.btn-lg {
+            font-size: 14px;
+        }
+        &.active,
+        &:hover {
+            color: $brand-info;
+        }
+        &.success {
+            @include text-shadow(0 1px 1px $brand-gray-dark);
+            color: $brand-white;
+            background-color: $brand-success;
+        }
+        +.btn {
+            margin-left: $padding-basex3;
+        }
+    }
+}
+
+// Add .btn-group-grid
+.btn-group-grid {
+    @include box-shadow(0 1px 3px $brand-gray);
+    @include clearfix();
+    >.btn {
+        padding: $padding-base;
+        @include square(35px);
+        >i {
+            vertical-align: middle;
+            font-size: 18px;
+        }
+        &.active,
+        &:hover {
+            color: $brand-info;
+        }
+        &+.btn {
+            margin-left: 2px;
+            &::before {
+                z-index: 2;
+                position: absolute;
+                left: -2px;
+                top: 25%;
+                content: "";
+                background-color: $brand-gray;
+                width: 1px;
+                height: 50%;
+            }
+        }
+    }
+}
+
+// Add .btn-group-circle
+.btn-group-circle {
+    @include clearfix();
+    >.btn {
+        background-color: transparent;
+        // Reset .btn-group radius
+        span {
+            display: block;
+            color: $brand-white;
+            margin-top: $padding-base;
+        }
+        i {
+            display: block;
+            font-size: 20px;
+            color: $brand-gray-dark;
+            background-color: $brand-white;
+            padding: $padding-basex2;
+            @include square(40px);
+            @include border-radius(50%);
+        }
+        &:hover {
+            i {
+                color: $brand-info;
+            }
+        }
+    }
+}
+
+// Add .btn-group-single
+.btn-group-single {
+    >.btn {
+        outline: 0;
+        background-color: $brand-white;
+        border: 1px solid $brand-gray-lighter;
+        height: 35px;
+        min-width: 35px;
+        &.btn-xs {
+            height: 25px;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: $brand-info;
+            color: $brand-info;
+        }
+        &.active {
+            @include text-shadow(0 1px 1px $brand-gray-dark);
+            color: $brand-white;
+            border-color: $brand-info;
+            background-color: $brand-info;
+            &:hover,
+            &:focus,
+            &:active {
+                color: $brand-white;
+            }
+        }
+    }
+}
+
+// Add .icon-divider with .btn 
+.btn {
+    .icon-divider {
+        padding-left: $padding-basex2;
+    }
+}
+
+// Add .icon-close with .btn 
+.btn {
+    position: relative;
+    .iconfont-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: -2px;
+    }
+}
+
+// Add .badge-fixed-top with .btn
+.btn {
+    position: relative;
+    .badge-fixed-top {
+        position: absolute;
+        top: -$padding-basex2;
+        right: -$padding-basex2;
+        padding: $padding-base $padding-base / 2;
+        font-size: .9em;
+        color: $brand-white;
+        background-color: $brand-danger;
+        @include square(20px);
+        @include border-radius(50%);
+    }
+}
+
+// Add .btn-text-group theme
+.btn-text-group {
+    cursor: default;
+    &:hover {
+        color: $brand-gray-dark !important;
+    }
+    .btn-text {
+        padding-right: $padding-base;
+        &.btn-sm {
+            font-size: 12px;
+        }
+        +.btn-text {
+            padding-left: $padding-basex2;
+        }
+    }
+}
+
+// Add .fa-fixed
+.btn,
+[data-role="loading"] {
+    &.btn-xs {
+        .fa-fixed,
+        .iconfont-fixed {
+            line-height: normal;
+        }
+    }
+}
+
+// Add .fa-fixed / .iconfont-fixed
+.fa-fixed,
+.iconfont-fixed {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba($brand-gray-lighter, .75);
+    width: 100%;
+    height: 100%;
+    line-height: 2.5;
+    @include border-radius();
+
+    // Reset .close 
+    .close {
+        &:hover {
+            font-size: 12px;
+            line-height: 1.4;
+            color: $brand-white;
+            background-color: $brand-danger;
+        }
+    }
+}
+
+// Reset default.active
+.message-edit .nav {
+    .btn-default {
+        &.active {
+            background-color: #077ccd;
+            border-color: #077ccd;
+            color: #fff;
+        }
+    }
+}

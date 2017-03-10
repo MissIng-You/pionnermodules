@@ -1,0 +1,123 @@
+
+html, body {
+    height: 100%;
+    width: 100%;
+    color: $brand-gray-dark;
+    overflow: hidden;
+}
+
+// Add make size font 12px -24px
+@include make-font-size();
+
+// Reset .container-fluid
+.container-fluid {
+    position: relative;
+    padding-top: $c-navbar-height;
+    padding-left: 0;
+    padding-right: 0;
+    height: 100%;
+
+    .sidebar {
+        position: fixed;
+        width: 200px;
+        height: 100%;
+        background-color: $brand-gray-lightest;
+
+        &.sidebar-white {
+            background-color: $brand-white;
+            border: 1px solid $brand-gray-lightest;
+        }
+    }
+
+    .content {
+        margin-left: 200px;
+    }
+}
+
+// Add .text-overflow
+.text-overflow {
+    @include text-overflow();
+}
+
+// Add .fixed-left-top .fixed-right-top .fixed-left-bottom .fixed-right-bottom
+.fixed-left-top {
+    z-index: 2;
+    position: fixed;
+    top: $c-navbar-height;
+    // left: $padding-basex3;
+    @include gradient-vertical(rgba($brand-gray, .2), rgba($brand-gray, 0));
+
+    // Reset .panel-title-underline
+    &.transparent {
+        background: transparent !important;
+
+        .panel-title-underline {
+            border-bottom: 0;
+        }
+    }
+}
+
+.fixed-right-top {
+    z-index: 2;
+    position:fixed;
+    top: $c-navbar-height + $padding-basex3;
+    right: $padding-basex3;
+}
+
+.fixed-left-bottom {
+    z-index: 2;
+    position: fixed;
+    bottom: $padding-basex3;
+    left: $padding-basex3;
+}
+
+.fixed-right-bottom {
+    z-index: 2;
+    position:fixed;
+    bottom: $padding-basex3;
+    right: $padding-basex3;
+}
+
+.fixed-messages-left {
+    z-index: 1;
+    position: fixed;
+    top: $c-navbar-height + $padding-basex3 * 5;
+    left: 0;
+    padding-left: $padding-basex3;
+    @include user-select(none);
+}
+
+.fixed-messages-right {
+    z-index: 1;
+    position:fixed;
+    top: $c-navbar-height + $padding-basex3 * 5;
+    right: 0;
+    padding-right: $padding-basex3;
+
+    @include user-select(none);
+}
+
+
+// Add text component
+
+// Add .text-danger
+.text-danger {
+    color: $brand-danger;
+    &:hover, &:focus {
+        color: $brand-danger;
+    }
+}
+
+// Add .text-warning
+.text-warning {
+    color: $brand-warning;
+    &:hover, &:focus {
+        color: $brand-warning;
+    }
+}
+
+
+// Add .user-select
+.user-select {
+    @include user-select(none);
+}

@@ -1,0 +1,26 @@
+
+// Add .btn-{theme}-text
+.btn-primary-text {
+  @include button-variant($btn-primary-bg, $btn-primary-color, $btn-primary-border);
+}
+// Success appears as green
+.btn-success-text {
+  @include button-variant($btn-success-bg, $btn-success-color, $btn-success-border);
+}
+// Info appears as blue-green
+.btn-info-text {
+  @include button-variant($btn-info-bg, $btn-info-color, $btn-info-border);
+}
+// Warning appears as orange
+.btn-warning-text {
+  @include button-variant($btn-warning-bg, $btn-warning-color, $btn-warning-border);
+}
+// Danger and error appear as red
+.btn-danger-text {
+  @include button-variant($btn-danger-bg, $btn-danger-color, $btn-danger-border);
+}
+
+// Reset .btn-sm .btn-group-sm > .btn
+.btn-sm, .btn-group-sm > .btn {
+  padding: $padding-base $padding-basex2;
+}

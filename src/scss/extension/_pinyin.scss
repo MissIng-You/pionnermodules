@@ -1,0 +1,28 @@
+﻿
+// Add .nav--pinyin
+.nav--pinyin {
+    padding-top: 2px;
+    margin-left: $padding-basex2;
+
+    > li{                       
+        a {
+            padding: $padding-base;
+            color: $brand-info;
+
+            &:hover, &:active, &:visited, &:focus {
+                cursor: pointer; 
+            }       
+        }   
+                    
+        &.disabled {                            
+            a {
+                color: $brand-gray-lighter;     
+                    
+                &:hover, &:active, &:visited, &:focus {
+                    cursor: default; 
+                    color: $brand-gray-lighter;
+                }
+            }                                      
+        }             
+    }
+}

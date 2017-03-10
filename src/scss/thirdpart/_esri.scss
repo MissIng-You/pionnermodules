@@ -1,0 +1,55 @@
+
+// Reset .esriPopup 
+.esriPopup {
+
+    // Reset box-shadow
+    .esriPopupWrapper {
+        @include box-shadow(0 0 .75em $brand-gray-light);
+        border: 1px solid $brand-info;
+    }
+
+    // Reset background-color
+    .titlePane, .contentPane, .actionsPane {
+        background-color: $brand-white;
+    }
+
+    .titlePane {
+        padding: 3px 0;
+    }
+
+    .contentPane {
+        padding-top: 6px;
+    }
+
+    .pointer, .outerPointer {
+        background-color: $brand-white;
+        border: 1px solid $brand-info;
+    }
+
+    // .outerPointer .left/.right
+    .outerPointer {
+        &.left {
+            left: 10px;
+        }
+        &.right {
+            right: 10px;
+        }
+    }
+
+    // .pointer .top/.bottom
+    .pointer {
+        &.top, &.topLeft, &.topRight {
+            top: -6px;
+            background-color: $brand-white;
+
+            @include box-shadow(0 0 .75em $brand-gray-light);
+        }
+        &.bottom {
+            bottom: -6px;
+        }
+    }
+
+    .content {
+        margin-left: 0;     // Reset .container-fluid .content;
+    }
+}

@@ -1,0 +1,197 @@
+
+// Reset .navbar
+.navbar-nav {
+    min-height: $c-navbar-height;
+    border-bottom: 0;
+    margin-bottom: 0;
+
+  > li {
+  // max-width: $navbar-item-width;
+
+    > a {
+        line-height: $c-navbar-height;
+        height: $c-navbar-height;
+        padding: 0 $navbar-padding;
+        letter-spacing: $letter-space-base;
+
+        span {
+          vertical-align: top;
+        }
+    }
+
+    .user-mask {
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+      margin-right: $padding-basex2;
+    }
+  }
+}
+
+.navbar-collapse .pull-right {
+    > li {
+        > a {
+             padding-right: $padding-basex3;
+        }
+    }
+}
+
+
+// Add .navbar-info theme
+.navbar-info {
+  // background-color: $navbar-info-bg;
+  border-color: $navbar-info-border;
+  font-size: 14px;
+  @include box-shadow(0 1px 2px rgba(#000, .8));
+  @include background-gradient();
+
+  .navbar-brand {   
+    color: $brand-white-dark;
+    line-height: $c-navbar-height - 33px;
+    height: $c-navbar-height;
+    font-size: 24px;
+
+    .small {
+      font-size: 12px;
+      margin-left: $padding-basex3;
+    }
+
+    &:hover,
+    &:focus {
+      color: $navbar-info-brand-hover-color;
+      background-color: $navbar-info-brand-hover-bg;
+    }
+  }
+
+  .navbar-nav {
+    > li > a {
+      background-color: transparent;
+      color: $brand-white-dark;
+      &:hover,
+      &:focus {
+        border-bottom: 3px solid $brand-twitter-light;
+        color: $brand-white-dark;
+        @include background-gradient-vertical();
+      }
+    }
+    
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        border-bottom: 3px solid $brand-twitter-light;
+        color: $brand-white-dark;
+        @include background-gradient-vertical();
+      }
+    }
+
+    // Reset last-child
+    >li:last-child > a {
+      background-color: $brand-info;
+      &:hover,
+      &:focus {
+        border-bottom: 0;
+      }
+    }
+    >.active:last-child > a {
+      &,
+      &:hover,
+      &:focus {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  // Darken the responsive nav toggle
+  .navbar-toggle {
+    border-color: $navbar-info-toggle-border-color;
+    margin-top: $padding-basex3;
+
+    &:hover,
+    &:focus {
+      background-color: $navbar-info-toggle-hover-bg;
+    }
+
+    .icon-bar {
+      background-color: $navbar-info-toggle-icon-bar-bg;
+    }
+  }
+
+  // Reset  collapse.in
+  .navbar-collapse{
+    &.in {
+      overflow-y: inherit;
+    }
+  }
+
+  // Reset .collapse .navbar-nav
+  .collapse.in, .collapsing {
+    position: relative;
+
+    .pull-right {
+      display: none;
+    }
+
+    .navbar-nav {
+      position: absolute;
+      margin-top: 0;
+      right: $padding-basex3;
+      
+      @include background-gradient();
+
+      > li {
+        margin-bottom: 0;
+        > a {
+          color: $navbar-info-link-color;
+          &.hover,
+          &:hover,
+          &:focus {
+            color: $navbar-info-link-hover-color;
+            background-color: $navbar-info-link-hover-bg;
+          }
+        }
+      }
+       
+      > .active > a {
+        &,
+        &.hover,
+        &:hover,
+        &:focus {
+          color: $navbar-info-link-active-color;
+          background-color: $navbar-info-link-active-bg;
+        }
+      }
+      > .disabled > a {
+        &,
+        &.hover,
+        &:hover,
+        &:focus {
+          color: $navbar-info-link-disabled-color;
+          background-color: $navbar-info-link-disabled-bg;
+        }
+      }
+    }
+
+    // Reset .collapse .nav-submenu
+    .nav-submenu {
+      position: relative;
+
+      @include border-radius(0);
+      @include box-shadow(none);
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        margin-top: -5px;
+        margin-bottom: 0;
+        border-left-color: $brand-white;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+
+
+}
+
+ 

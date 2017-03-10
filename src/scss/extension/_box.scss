@@ -1,0 +1,183 @@
+
+
+// Add box component.
+
+.box-list {
+    > li  + li {
+        margin-top: $padding-basex3;
+    }
+
+    // add .box-empty
+    .box-empty {
+        text-align: center;
+        font-size: 1.2em;
+        line-height: 240px;
+        @include text-shadow(0 0 1px);
+    }
+}
+
+// Add .box
+.box {
+    position: relative;
+    margin: 0 $padding-basex3;
+    width: 240px;
+
+    @include clearfix();
+    // Add .box-body
+    .box-body {
+        padding: $padding-basex2;
+        background-color: $brand-white;
+        @include box-shadow(inset 0 0 1px $brand-gray);
+        @include border-top-radius($radius-base);
+    }
+    // Add .box-footer
+    .box-footer {
+        padding: $padding-base $padding-basex2;
+        color: $brand-white-dark;
+        @include background-gradient();
+        @include box-shadow(0 1px 3px $brand-gray);
+        @include border-bottom-radius($radius-base);
+
+        i {
+            margin-right: $padding-base;
+        }
+    }
+
+    // Add .box-new-flag
+    .box-new-flag {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        color: $brand-white;
+        background-color: $brand-danger;
+        padding: $padding-base;
+        @include square(20px);
+
+        &::before, &::after {
+            position: absolute;
+            width: 0;
+            height: 0;
+
+            display: block;
+            content: "";
+
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent;
+            border-top-color: $brand-danger;
+            border-right-color: $brand-danger;
+        }
+
+        &::before {
+            top: 0;
+            left: -20px;
+        }
+        &::after {
+            top: 20px;
+            left: 0;
+        }
+    }
+    // Add .box-hover
+    .box-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        margin-left: -400px;
+
+        @include background-gradient();
+        @include opacity(0);
+        @include transition(all .5s);
+
+        .btn-group-circle {
+            margin-top: $padding-basex3;
+            margin-left: $padding-basex2;
+        }
+    }
+
+    // Add .box hover
+    &:hover {
+        & .box-hover {
+            margin-left: 0;
+            @include opacity(.9);
+        }
+    }
+}
+
+// Add .box-body .box-mask .box-content
+.box-body {
+    @include clearfix();
+    .box-mask {
+        float: left;
+        margin-right: $padding-basex2;
+        @include square(50px);
+        font-size: 3em;
+        vertical-align: middle;
+
+        &.box-mask-sm {
+            @include square(35px);
+            font-size: 2em;
+        }
+    }
+    .box-content {
+        float: left;
+        border-left: 1px solid $brand-white-dark;
+        padding-left: $padding-basex2;
+        .title, .subtitle {
+            display: block;
+            padding-bottom: $padding-base;
+        }
+        .subtitle {
+            color: $brand-gray;
+        }
+    }
+}
+
+// Add .title .title-tooltip
+.title {
+    position: relative;
+    // Add .box-tooltip
+    .title-tooltip {
+        display: inline-block;
+        margin-left: $padding-base;
+        padding: $padding-base;
+        color: $brand-white;
+        background-color: $brand-gray-dark;
+        font-size: 12px;
+        @include border-radius();
+        @include arrow-left();
+    }
+}
+
+
+// Add .box-img-mask
+.box-img-mask {
+    border: 1px solid $brand-gray-light;
+    position: relative;
+    @include border-radius();
+    min-height: 50px;
+
+    &:hover, &.active {
+        border-color: $brand-info;
+        .img {
+            @include opacity(.9);
+        }
+        .mask {
+            background-color: $brand-info;
+            color: $brand-white;
+        }
+    }
+    .img {
+        background-color: $brand-gray;
+        @include square(100%);
+    }
+    .mask {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: $padding-base;
+    }
+}

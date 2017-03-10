@@ -1,0 +1,320 @@
+
+// Reset .panel
+.panel {
+    position: relative;
+    margin-bottom: 0;
+    border: 0;
+
+    @include border-radius(0);
+    @include clearfix();
+
+    & + .panel {
+        margin-bottom: $padding-basex4;
+    }
+    // Reset .panel .sidebar
+    .sidebar {
+        margin-top: $padding-basex4;
+        margin-left: $padding-basex5;
+    }
+    // Reset .panel .content
+    .content {
+        padding-left: $padding-basex5;
+    }
+}
+
+// Add .panel-search
+.panel-search {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: $padding-basex4;
+    padding-right: $padding-basex5;
+    padding-left: $padding-basex5;
+
+    @include clearfix();
+
+    .input-label {
+        font-weight: normal;
+        font-size: 1.05em;
+    }
+}
+
+// Reset .panel-title
+.panel-title {
+    // Add .panel-title-underline theme
+    &.panel-title-underline {
+        margin-left: $padding-basex5;
+        margin-right: $padding-basex5;
+        border-bottom: 2px solid $brand-info;
+    }
+    // Add .panel-title-gray theme
+    &.panel-title-gray {
+        padding-left: $padding-basex5;
+        background-color: $brand-info-lightest;
+
+        .panel-title-heading {
+            margin: 5px 0;
+        }
+    }
+
+    @include clearfix();
+
+    .panel-title-heading {
+        padding: 5px 0;
+
+        > .fa, > .iconfont {
+            margin-right: 15px;
+        }
+    }
+}
+
+// Reset .panel-body
+.panel-body {
+    margin-left: 0;
+    margin-top: 0;
+    padding: $padding-basex4 $padding-basex5;
+
+    @include clearfix();
+}
+
+// Reset .panel-footer & .pagination
+.panel-footer {
+    padding: 0 $padding-basex5 $padding-basex4;
+    border-top: 0;
+    background-color: transparent;
+
+    @include clearfix();
+    // Add .panel-footer-gray theme
+    &.panel-footer-gray {
+        padding-top: $padding-basex4;
+        background-color: $brand-info-lightest;
+    }
+
+    .pagination {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: $padding-basex5; // deal with .input-group
+    }
+}
+
+// Reset .panel-info
+.panel-info {
+    border: 0;
+    @include box-shadow(none);
+}
+
+// Add .panel-no-padding .btn-group-gap
+.panel-no-padding .panel-title {
+    >.btn-group-gap, 
+    >.btn-group-single, 
+    >.form-control-group {
+        margin: $padding-basex2 0;
+    }
+}
+
+// Add .panel-no-padding 
+.panel-no-padding {
+    .panel-title {
+        &.panel-title-underline {
+            border-bottom: 0;
+            margin-left: $padding-base;
+            margin-right: $padding-base;
+
+            &::after {
+                position:absolute;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: $brand-info;
+                margin-right: $padding-base;
+            }
+        }
+
+        // Add .close
+        .close {
+            line-height: 1.4em;
+            margin-top: - $padding-basex4 + 2px;
+            margin-right: - $padding-base;
+            padding: 0 $padding-basex2;
+            
+            &:hover {
+                cursor: pointer;
+                background-color: $brand-danger;
+                color: $brand-white;
+            }
+        }
+    }
+
+    .panel-body, 
+    .panel-footer {
+        padding: 0;
+    }
+
+    & + .panel-no-padding {
+        margin-bottom: 0;
+    }
+
+    // Reset .form-group
+    .form-group {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    // Reset .btn-group-arrow
+    .btn-group-arrow {
+        margin: $padding-basex2 0;
+    }
+}
+
+// Add .panel-transparent
+.panel-transparent {
+    background-color: transparent;
+    @include box-shadow(none);
+    
+    .panel-title {
+        padding: $padding-basex2 0;
+        border-bottom: 1px solid $brand-white;
+        &.panel-title-underline {
+            margin: $padding-base $padding-basex3 0;
+        }
+    }
+    .panel-body {
+        padding: $padding-basex3 0;
+    }
+    .panel-footer {
+        padding: 0;
+    }
+}
+
+// Add .panel-inverse 
+.panel-inverse {
+    color: $brand-white;
+    background-color: $brand-gray-dark;
+
+    .panel-title-gray {
+        background-color: $brand-gray-darken;
+        margin: -5px -5px 0;
+        padding: $padding-base;
+        @include border-top-radius($radius-base);
+    }
+
+    .panel-title-heading {
+        padding-left: $padding-base;
+        padding-right: $padding-base;
+    }
+}
+
+// Add .panel-radius
+.panel-radius {
+    &:first-child {
+        @include border-top-radius($radius-base);
+    }
+    &:last-child {
+        @include border-bottom-radius($radius-base);
+    }
+}
+
+// Add  .message-table
+.message-table {
+    font-size: 1.2em;
+    border-width: 0;
+
+    .panel-title {
+        padding: 5px 0;
+        @include clearfix();
+
+        .message-type {
+            float: left;
+            padding-top: 12px;
+        }
+
+        & .btn-toolbar {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .panel-body {
+        border: 1px solid #a0a4a9;
+        margin-top: 10px;
+        height: 100%;
+        min-height: 450px;
+        padding: 5px 0;
+        background-color: rgba(125,125,125,0.1);
+    }
+
+    .panel-footer {
+        margin-top: 10px;
+        padding: 0;
+
+        .form-group {
+            &:first-child {
+                margin-right: 20px;
+                margin-top: 0;
+                input[type="checkbox"] {
+                    /*height: 50px;
+                    width: 50px;*/
+                }
+                span {
+                    margin: 0;
+                }
+            }
+          .select2-container {                
+                width: 50px;
+            }
+           .select2-container .select2-selection--single {
+               height: 20px;
+               border-radius: 0;
+           }
+           .select2-container--default .select2-selection--single .select2-selection__rendered {
+               line-height: 20px;
+           }
+           .select2-selection--single .select2-selection__arrow {
+               height: 18px; 
+           }
+        }
+    } 
+}
+
+// Add  .message-edit
+.message-edit {
+    font-size: 1.2em;
+
+    > .panel-title {
+        margin: 0;
+        padding: 20px 20px 0 20px;
+
+        > span {
+            margin: 0;
+            padding: 5px 10px 5px 0;
+        }
+
+        ul li {
+            margin-right: 15px;
+        }
+    }
+
+    .panel-body {
+        margin: 0;
+        height: 100%;
+        min-height: 300px;
+
+        > .message-content {
+            padding-top: 5px;
+            height: 100%;
+            min-height: 240px;
+            border: 1px solid #a0a4a9;
+            @include clearfix();
+
+            span {
+                background-color: rgba(125,125,125,0.2);
+                position: relative;
+                margin-bottom: 5px;
+            }
+        }
+
+        > .message-count {
+            padding-top: 15px;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+
+// Reset .alert
+.alert {
+    margin-bottom: 0;
+
+    & + .alert {
+        margin-bottom: $line-height-computed;
+    }
+}
+
+// Add .alert-xs
+.alert-xs {
+    padding: $padding-basex3;
+}
+
+// Add .alert--prompt
+.alert--prompt {
+    position: absolute;
+    z-index: 9999;
+    top: $c-navbar-height;
+    right: 0;
+
+    height: 44px;
+    line-height: 44px;
+    max-width: 75%;
+    min-width: 300px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 0;
+
+    @include border-radius(0);
+    @include transition(width 1.5s linear);
+
+    .icon-prompt {
+        font-size: 2em;
+        vertical-align: middle;
+        margin-right: 15px;
+    }
+}

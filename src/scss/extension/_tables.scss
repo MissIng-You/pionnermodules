@@ -1,0 +1,91 @@
+
+// Reset .table
+.table {
+    margin-bottom: 0;
+
+    @include box-shadow(0 1px 1px rgba(0,0,0,.05));
+
+    > thead {
+        background-color: $brand-white;
+
+        > tr > td {
+            padding-top: $padding-basex3;
+            padding-bottom: $padding-basex3;
+        }
+    }
+
+    > tbody {
+        > tr > td {
+            vertical-align: middle;
+            border-top: none;
+            line-height: 28px;
+            // border-bottom: 1px solid $gray-lighter;
+        }
+
+        > tr.disabled > td {
+            color: $brand-disabled;
+        }
+    }
+
+    // Add .unit-middle
+    .unit-middle {
+        display: inline-block;
+        vertical-align: text-top;
+        margin-top: -.75em;
+    }
+}
+
+// Add .talbe-xs
+.table-xs {
+    > thead {
+        > tr > td {
+            padding-top: $padding-basex2;
+            padding-bottom: $padding-basex2;
+        }
+    }
+
+    > tbody {
+        > tr > td {
+            padding: $padding-base / 2;
+
+        }
+    }
+}
+
+// Add .table-pointer
+.table-pointer {
+    > tbody > tr {
+        cursor: pointer;
+    }
+}
+
+// Add .table-hover
+.table-hover {
+    > tbody > tr {
+        // &:hover >td {
+        //     border-bottom: 1px solid $brand-info;
+        // }
+        // &.disabled:hover > td {
+        //     background-color: transparent;
+        //     border-bottom: 1px solid lighten($brand-info, 20%);
+        // }
+        // &.danger:hover > td {
+        //     border-bottom: 1px solid $brand-danger;
+        // }
+        &:hover {
+            background-color: $brand-white-darken;
+        }
+    }
+}
+
+// Add .talbe-underline
+.table-underline {
+    >thead {
+        background-color: transparent;
+        color: $brand-white;
+    }
+    >tbody > tr + tr {
+        border-top: 1px dashed $brand-white-dark;
+    }
+}
+

@@ -1,0 +1,233 @@
+
+
+// Add .nav-submenu
+.nav-submenu {
+    position: absolute;
+    background-color: $brand-white;
+    padding: $padding-basex2 $padding-basex3;
+    // @include box-shadow(0 1px 4px rgba(0,0,0,.2));
+    @include border-bottom-radius($radius-base);
+    @include box-shadow(0 2px 3px $brand-gray);
+
+    // // Add top arrow
+    // &::before{
+    //     position: absolute;
+    //     height: 0;
+    //     width: 0;
+    //     left: 50%;
+    //     margin-left: -5px;
+    //     top: -10px;
+    //     border-color: transparent;
+    //     border-width: 5px;
+    //     border-style: solid;
+    //     border-bottom-color: $brand-white;
+    // }
+
+    li {
+
+        & + li {
+            margin-top: 0;
+            border-top: 1px solid $brand-white-dark;
+        }
+
+        &.active a {
+            color: $brand-info;
+            font-weight: bold;
+
+            &:hover, &:active, &:visited, &:focus {
+                color: $brand-info;
+                background: transparent;
+            }
+        }
+
+        &.disabled a {
+            color: $brand-gray;
+        }
+
+        a {
+            min-width: $navbar-item-width - 2px; // remove 2px border width
+            padding: $padding-basex2 0; // 8px 0;
+            color: $brand-gray-dark;
+            font-size: 12px;
+
+            &:hover, &:active, &:visited, &:focus {
+                // color: $brand-gray-darken;
+                font-weight: bold;
+                background-color: transparent;
+                cursor: pointer;
+            }
+
+            i, .fa, .iconfont {
+                margin-right: $padding-basex2;
+            }
+        }
+    }
+}
+
+.nav-right {
+    > li {
+        a {
+            margin-right: $padding-base / 2;
+            min-width: $navbar-item-width + 10px;
+        }
+    }
+}
+
+// Add .nav--person-list
+.nav--person-list {
+    li {
+
+        .fa, .iconfont, i {
+            color: $brand-gray-dark;
+        }
+
+        & + li {
+            margin-top: 1px;
+        }
+
+        &.active > a {
+            color: $brand-white;
+            background-color: $brand-info;
+            font-weight: bold;
+
+            &:hover, &:active, &:visited, &:focus {
+                color: $brand-white;
+                background-color: $brand-info;
+                font-weight: bold;
+            }
+        }
+
+        &.disabled > a {
+            color: $brand-disabled;
+            background-color: transparent;
+            font-weight: normal;
+
+            &:hover, &:active, &:visited {
+                color: $brand-disabled;
+            }
+        }
+
+        > a {
+            @include clearfix();
+            color: $brand-gray-dark;
+            background-color: $brand-gray-lightest;
+            padding: $padding-basex2 $padding-basex3;
+
+            &:hover, &:active, &:visited, &:focus {
+                color: $brand-gray-dark;
+                background-color: $brand-gray-lightest;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+// Add .nav--submenu
+.nav--person-list-submenu {
+    background-color: $brand-white;
+
+    li {
+
+        &:last-child > a {
+            border-bottom: 0;
+        }
+
+        &.active > a {
+            color: $brand-info;
+            background-color: $brand-white;
+
+            &:hover, &:active, &:visited, &:focus {
+                color: $brand-info;
+                background-color: $brand-white;
+            }
+        }
+
+        > a {
+            background-color: $brand-white;
+            padding-left: $padding-basex3 * 2;
+            border-bottom: 1px dashed $brand-gray-light;
+
+            &:hover, &:active, &:visited, &:focus {
+                background-color: $brand-white;
+            }
+        }
+    }
+}
+
+// Add  .nav--message-list
+.nav--message-list {
+    padding: 15px 0 5px 0;
+    background-color: #fff;
+
+    > span {
+        font-size: 1.2em;
+    }
+
+    > ul {
+        margin-top: 17px;
+        margin-right: 5px;
+        border: 1px solid #a0a4a9;
+        height: 100%;
+        min-height: 600px;
+
+        > li {
+            padding: 6px 12px;
+            border-style: dotted;
+            border-width: 0;
+            border-bottom-width: 1px;
+            border-color: #a0a4a9;
+
+            &.active {
+                color: #0993f0;
+                font-weight: bold;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Add .nav--legend
+.nav-stacked-list {
+    position: relative;
+
+    padding: $padding-basex3;
+    background-color: $brand-white;
+    color: $brand-gray-darken;
+
+    @include border-top-radius($radius-base);
+    @include box-shadow(0 -1px 3px $brand-gray-light);
+    > li {
+        .icon-mask {
+            color: $brand-info;
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        >i {
+            margin-right: $padding-base;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        & + li {
+            margin-top: $padding-basex2;
+        }
+    }
+}
+
+// // Add .form--location
+// .form--location {
+//     position: relative;
+
+//     padding: $padding-base $padding-basex3;
+//     background-color: $brand-white;
+//     border: 1px solid $brand-info;
+
+//     @include text-shadow(none);
+//     @include clearfix();
+// }

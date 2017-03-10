@@ -1,0 +1,23 @@
+
+// Reset popover component.
+.popover {
+    max-width: $c-popover-max-width;
+}
+
+// Reset .popover-content
+.popover-content {
+    padding: $padding-base;
+}
+
+// Add .popover-inverse
+.popover-inverse {
+    background-color: $brand-gray-dark;
+
+    // Reset .arrow top right bottom left 
+    &.left > .arrow {
+        border-left-color: $brand-gray-dark;
+        &:after {
+            border-left-color: $brand-gray-dark;
+        }
+    }
+}

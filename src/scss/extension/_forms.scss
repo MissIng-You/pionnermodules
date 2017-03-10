@@ -1,0 +1,48 @@
+
+// Reset .form-group
+.form-group {
+    margin-bottom: 0;
+
+    .col-xs-3 ,.col-xs-4, .col-xs-6, .col-xs-8 {
+        padding-left: 0;
+    }
+}
+
+// Add .form-horizontal--divider
+
+.form-horizontal--divider {
+
+    .form-group {
+        padding-top: $padding-base;
+        padding-bottom: $padding-basex2;
+        border-top: 1px dashed $gray-lighter;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    .control-label {
+        width: 105px;
+    }
+}
+
+// Add .form-hover
+.form-hover {
+    >.form-group {
+        color: $brand-gray;
+        &.hover, &.active {
+            color: $brand-gray-dark;
+            &:hover {
+                cursor: pointer;
+                background-color: $brand-gray-lighter;
+            }
+        }
+    }
+}
+
+// Add .form-inverse
+.form-inverse {
+    background-color: $brand-black;
+    color: $brand-white;
+}

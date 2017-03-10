@@ -1,0 +1,55 @@
+
+// Add .icon components
+
+.icon-radius {
+    display: inline;
+    padding: $padding-base * 1.5;
+    color: $brand-white;
+    background-color: $brand-gray;
+    
+    @include border-radius(50%);
+
+    // Add .icon-radius-theme
+    &.icon-radius-twitter {
+        color: $brand-white;
+        background-color: $brand-twitter;
+    }
+
+    &.icon-radius-bootstrap {
+        color: $brand-white;
+        background-color: $brand-bootstrap;
+    }
+
+    &.icon-radius-success {
+        color: $brand-white;
+        background-color: $brand-success;
+    }
+
+    &.icon-radius-info {
+        color: $brand-white;
+        background-color: $brand-info;
+    }
+
+    &.icon-radius-danger {
+        color: $brand-white;
+        background-color: $brand-danger;
+    }
+}
+
+// Add .iconimage compontents.
+$images-name: info-warning, info-danger, 
+                bell-warning, bell-danger, 
+                broadcast-warning, broadcast-danger;
+$image-url: "../../images/mapIcons";
+@include make-icon-images($images-name, $image-url, ".jpg");
+
+
+$map-images-name: adjoin-sites, over-threshold, rain-monitor,
+                    rain-monitor-level2, rain-monitor-level3, rain-monitor-level4,
+                    rain-simple, raining, video-monitor,
+                    water-monitor, water-rain, water-simple;
+$map-image-url: "../../images/mapSites";
+@include make-icon-images($map-images-name, $map-image-url, ".svg");
+
+$image-sizes: 16, 18, 24, 32, 35, 50;
+@include make-icon-image-sizes($image-sizes);

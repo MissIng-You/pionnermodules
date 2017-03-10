@@ -1,0 +1,114 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Core variables
+$padding-base: 4px !default;
+$padding-basex2: $padding-base * 2 !default;
+$padding-basex3: $padding-base * 3 !default;
+$padding-basex4: $padding-base * 4 !default;
+$padding-basex5: $padding-base * 5 !default;
+
+$radius-base: 3px !default;
+
+$shadow-base: 3px !default;
+
+//** letter spacing width
+$letter-space-base: 1px !default;
+
+//== Popovers
+// 
+// ##
+$c-popover-max-width: 330px !default;
+
+
+//== Modals
+//
+//##
+
+$c-modal-title-height: 40px !default;
+
+//** Padding applied to the modal body
+$c-modal-inner-padding: 0 !default; // 4px
+
+//** Padding applied to the modal title
+$c-modal-title-padding: 0 20px !default;  // 0 20px;
+
+//** Background color of modal content area
+$modal-content-bg:                             #fff !default;
+//** Modal content border color
+$c-modal-content-border-color:                   $brand-gray-light !default;
+
+// ** Modal inner content border color
+$c-modal-content-inner-border-color: #c9c9c8 !default;
+
+//** Modal backdrop background color
+$c-modal-backdrop-bg:        rgba(0,0,0,.2) !default;
+
+//** Modal header background color;
+$c-modal-header-bg: $brand-white-dark;
+
+//** Modal body background color;
+$c-modal-body-bg: #ebf0f7 !default;
+
+//** Modal backdrop opacity
+$modal-backdrop-opacity:      .5 !default;
+//** Modal header border color
+$modal-header-border-color:   #e5e5e5 !default;
+//** Modal footer border color
+$modal-footer-border-color:   $modal-header-border-color !default;
+
+// ** Modal sizes;
+$c-modal-lg:                    1125px !default;
+$c-modal-md:                    750px !default;
+$c-modal-sm:                    375px !default;
+$c-modal-xs:                    300px !default;
+
+// ** Modal height xs sm md lg
+$c-modal-body-height-xs: 200px;
+$c-modal-body-height-sm: 350px;
+$c-modal-body-height-md: 400px;
+$c-modal-body-height-lg: 800px;
+
+//== Navbar
+//
+//##
+
+// Core navbar
+//** nav item default width
+$navbar-item-width: 115px !default;
+$navbar-padding: $padding-base * 5 !default; // 4px * 5
+$navbar-padding-sm: $padding-base * 2 !default; // 4px * 2
+
+// Basics of a navbar
+$c-navbar-height:                    60px !default;
+$c-line-height: ($c-navbar-height - $navbar-height + $line-height-computed  ); // 10px;
+
+//=== Info navbar
+// Reset info navbar basics
+$navbar-info-color:                     $brand-white-dark !default;
+$navbar-info-bg:                         $brand-info !default;
+$navbar-info-border:                  #489cf3 !default;
+
+// Info navbar links
+$navbar-info-link-color:                     $brand-white !default;
+$navbar-info-link-hover-color:           $brand-white !default;
+$navbar-info-link-hover-bg:               $brand-info-dark !default;
+$navbar-info-link-active-color:           $brand-white !default;
+$navbar-info-link-active-bg:               $brand-info-darken !default;
+$navbar-info-link-disabled-color:        #444 !default;
+$navbar-info-link-disabled-bg:           transparent !default;
+
+// Info navbar brand label
+$navbar-info-brand-color:                $navbar-info-link-color !default;
+$navbar-info-brand-hover-color:          #fff !default;
+$navbar-info-brand-hover-bg:             transparent !default;
+
+// Info navbar toggle
+$navbar-info-toggle-hover-bg:            #333 !default;
+$navbar-info-toggle-icon-bar-bg:         #fff !default;
+$navbar-info-toggle-border-color:        #333 !default;
+ 
+// btn-padding
+$padding-btn-top:                        $padding-base*1.25  !default;
+$padding-btn-right:                      $padding-base*2.5  !default;            

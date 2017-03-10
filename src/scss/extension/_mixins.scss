@@ -1,0 +1,127 @@
+
+// Add mixins border-radius
+@mixin border-radius($border-radius: $radius-base) {
+    @include border-top-radius($border-radius);
+    @include border-bottom-radius($border-radius);
+}
+
+// Add mixins  arrow-top-empty
+// $arrow-base-height 通过距底部距离判断
+@mixin arrow-top-empty($arrow-color: $brand-info, $arrow-bg: $brand-white, 
+    $arrow-width: 1px, $arrow-base-height: 5px) {
+    &::before, &::after {
+        position: absolute;
+        left: 50%;
+
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+
+        border-color: transparent;
+        border-style: solid;
+    }
+    &::before {
+        margin-left: -$arrow-base-height;
+        bottom: -($arrow-base-height * 2 - $arrow-width);
+
+        border-width: $arrow-base-height;
+        border-bottom-color: $arrow-color;
+    }
+    &::after{
+        margin-left: -($arrow-base-height - 1px);
+        bottom: -($arrow-base-height * 2 - 1px);
+
+        border-width: ($arrow-base-height - 1px);
+        border-bottom-color: $arrow-bg;
+    }
+}
+
+// Add mixins  arrow-left
+@mixin arrow-left($arrow-color: $brand-gray-dark, $arrow-width: 5px) {
+    &::before {
+        position: absolute;
+
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+
+        border-color: transparent;
+        border-style: solid;
+
+        margin-left: -$arrow-width * 3 + 1px;
+        margin-top: $arrow-width;
+
+        border-width: $arrow-width;
+        border-right-color: $arrow-color;
+      }
+}
+
+// Add mixins text-shadows
+@mixin text-shadow($content) {
+    text-shadow:  $content;
+}
+
+// Add mixins box-shadow
+@mixin box-shadow-default() {
+    @include box-shadow(inset 0 -3px 0 $brand-gray);
+}
+
+// Add mixins horizontal background-gradient
+@mixin background-gradient() {
+    @include gradient-horizontal($brand-inverse-light, $brand-inverse, 0%, 50%);
+}
+
+// Add mixins vertical background-gradient
+@mixin background-gradient-vertical() {
+    $twitter0 : rgba($brand-twitter, 0%);
+    $twitter100: rgba($brand-twitter, 100%);
+    @include gradient-vertical($twitter0, $twitter100, 0%, 100%);
+}
+
+// Add mixins horizontal background-gradient-three
+@mixin background-gradient-three() {
+    @include gradient-horizontal-three-colors($brand-inverse-light, $brand-white, 50%, $brand-inverse);
+}
+
+// Add mixins make font-size
+@mixin make-font-size($size-start: 12, $size-end: 24, $font-unit: px) {
+    @for $i from $size-start through $size-end {
+        .font-#{$i} {
+            font-size: $i + $font-unit;
+        }
+    }
+}
+
+// Add mixins make icon images
+@mixin make-icon-images($images-name, $image-url, $image-extension: ".jpg") {
+    @each $image in $images-name {
+        .icon-#{$image} {
+            display: inline-block;
+            vertical-align: text-top;
+            background-color: transparent;
+            background-position: 0;
+            background-repeat: no-repeat;
+            background-image: url($image-url + "/" + $image + $image-extension);
+        }
+    }
+}
+
+// Add mixins make icon image sizes
+@mixin make-icon-image-sizes($icon-image-sizes) {
+    @each $size in $icon-image-sizes {
+        .icon-#{$size} {
+            background-size: $size + px;
+            width: $size + px;
+            height: $size + px;
+        }
+    }
+}
+
+// Add mixins fixed
+@mixin fixed($hdir, $vdir, $offset: 0) {
+    position: fixed;
+    #{$hdir}: $offset;
+    #{$vdir}: $offset;
+}

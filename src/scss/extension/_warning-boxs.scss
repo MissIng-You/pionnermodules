@@ -1,0 +1,211 @@
+﻿
+// Add .warning-list
+.warning-list {
+    > li  + li {
+        margin-top: $padding-basex3;  
+    }
+}
+
+.warning-box {
+    margin-left: 1px;
+    margin-top: 1px;
+   
+    @include  clearfix();
+}
+.warning-message-left {   
+    height:100%;
+    width: 297px; 
+    float:left;
+    padding: 12px 8px 4px 8px;
+    border-radius: 3px;    
+    box-shadow: 0 0 1px #50555c;
+    background-color: $brand-white;
+
+    @include clearfix();
+}
+
+.warning-message-right {
+    float: left;
+    margin: 3px 0 3px 0;
+    border-radius:0 3px 3px 0;
+    width: 28px;
+    color: #fff;    
+    background-color: #a0a4a9;
+    border-color: #a0a4a9;
+    padding: 10px 8px;
+    
+    @include  clearfix();
+}
+
+.warning-primary {
+    &.active {
+        > .warning-message-left {
+            border-color: #03b7c0;
+            border-width: 1px;
+            border-style: solid;        
+        }
+    }   
+    > .warning-message-right {
+        background-color: #03b7c0;
+        border-color: #03b7c0;
+    }    
+}
+
+.warning-info {
+    &.active {
+        > .warning-message-left {
+            border-color: #0993f0;
+            border-width: 1px;
+            border-style: solid;
+        }
+    }   
+    > .warning-message-right {
+        background-color: #0993f0;
+        border-color: #0993f0;
+    }    
+}
+
+.warning-success {
+    &.active {
+        > .warning-message-left {
+            border-color: #6e7bd7;
+            border-width: 1px;
+            border-style: solid;       
+        }
+    }   
+    > .warning-message-right {
+        background-color: #6e7bd7;
+        border-color: #6e7bd7;
+    }    
+}
+
+.warning-message-detail {
+    padding: 0 0 4px 0;
+    border-bottom: 1px dashed $brand-gray;
+    height: 100%;
+    width: 280px;
+    @include  clearfix();
+      
+    >.warning-message-icon { 
+        padding: 0 10px 0 2px;
+        margin: 0;            
+        display: block;
+        float:left;
+        width: 45px;
+        height: 50px;
+            
+        > i ,
+        .fa{
+            width: 30px;
+            height: 30px;
+            font-size: 2.5em;
+        }   
+        > .icons-numeber {
+            display: block;
+            margin: 3px 0 4px 0;
+            padding:0;
+            font-size: 0.3em;
+        } 
+
+        &.warning {
+            color: #f88d03;
+        }
+        &.danger {
+            color: #f84427;
+        }
+        >.warning-message-text {
+            margin: 0;
+            padding: 0;
+            display: block;
+            float: left;
+
+            >span + span {
+                margin-left: $padding-base;
+            }
+        }
+    }
+}    
+
+.warning-message-text {
+    & .warning-message-address {
+        color: #5c5c5c;
+        margin: 0;
+        padding: 0;
+        display: block;
+        font-size: 1.5em;                   
+        > span {
+            font-size: 0.62em;
+            float: right;
+            margin:0;
+            padding: 6px 0;
+            @include clearfix();
+        }
+    }
+    & .warning-message-rain {
+        margin: 8px 0 0 0;
+        padding: 0 4px 0 0; 
+        display: block;
+    }
+}
+
+// Add .weather
+.warning-message-weather {
+    display: block;
+    margin-top: $padding-base;
+    position: relative;
+
+    > span + span {
+        padding-left: $padding-basex2;
+
+        &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            width:0;
+            height: 100%;
+            border-left: 1px solid $brand-gray;
+        }
+    }
+}
+
+.warning-hover {
+    position: absolute;
+    top: -2px;
+    left: 0;
+
+    > .warning-message-left {       
+        background-color: rgba(0,0,0,0.6);
+        border-color: #5c5c5c;
+        height:94px;
+        width: 297px;
+        padding:22px 5px;
+        border-radius: 3px;
+        @include clearfix();
+        > a{
+            color: #fff;
+            display: block;
+            float: left; 
+            margin: 0;
+            padding: 0;          
+            > i {
+                margin: 0;
+                font-size: 2.8em;
+                padding-left: 4px;
+            }
+            > span {
+                display: block;
+                margin-top: 5px;
+                font-size: 1.0em;
+            }
+            + a {
+                margin-left: 28px;
+            }
+
+            &:hover {
+                > i {
+                    color: #f88d03;
+                }
+            }
+        }      
+    }
+}
